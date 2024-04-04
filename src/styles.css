@@ -1,0 +1,463 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:  #21232A;
+    font-family: 'Quicksand', sans-serif; 
+}
+
+@font-face{
+    font-family: digital;
+    src: url(./assets/fons/digital.ttf)
+}
+
+@font-face{
+    font-family: KumL;
+    src: url(./assets/fons/KumbLight.ttf)
+}
+
+/* Contenedor general crea 2 columnas y 3 filas*/
+.wrapper {
+    display: grid;
+    grid-template-columns: 65vw 35vw; /* 65fr 35fr*/
+    grid-template-rows: 5vh 80vh 15vh; /* 1fr 83fr 15fr*/
+    height: 100vh;
+    width: 100%;
+    max-width: 4060px;
+    margin: 0 auto;
+    gap: 0.2rem;
+    overflow: hidden;
+    grid-template-areas:
+        "nav nav"
+        "img eva"
+        "con eva";
+}
+/* Cabacera */
+    .nav{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        grid-area: nav;
+        
+    }
+
+    .logoProvisional{
+        color: white;
+        margin: 0 auto 0 1rem;
+        font-family: 'Quicksand', sans-serif;
+        align-items: center;
+        align-self: center;
+        font-size: 1.5vw;
+        padding: 0;
+    }
+
+    @supports(object-fit: contain){
+        .logoTexto{
+          height: auto;
+          width: 100%;
+          object-fit:contain;
+          object-position: center center;
+          border-radius: 10px 10px 10px 10px;
+          margin-left: 0;
+        }
+    }
+
+    .iniciar, .pausar, .salir{
+        padding: 0% 0.3vw 0% 0.3vw;
+        font-size: 1.7vh;
+        color: white;
+        width: unset;
+        min-width: 6rem;
+        height: min-content
+
+    }
+
+    .iniciar{
+        background-color: green;
+    }
+    .pausar{
+        background-color: rgb(35, 77, 190);
+    }
+    .salir{
+        background-color: red;
+    }
+        
+    .divImgVic{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.3rem 0 1rem;
+        grid-area: img;
+        border: 0.15vw solid grey;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        @supports(object-fit: contain){
+            #imgVictima{
+                display: flex;
+                position: relative;
+                height: auto;
+                width: 95%;
+                object-fit: contain;
+                object-position: center center;
+                grid-area: img;
+                z-index: -1;
+
+            }
+
+        } 
+
+        /*Imagen Check*/
+        .check{
+            width: 40px;
+            height: 40px;
+        }
+        @supports(object-fit: contain){
+            .check{
+                position: absolute;
+                top: 10%;
+                left: 60%;
+                transform: translate(-50%, -50%);
+                height: 20%;
+                width: 20%;
+                object-fit: contain;
+            }
+        }
+
+        /*Imagen Hemorragia*/
+
+        #hemorragia{
+            width: 10px;
+            height: 10px;
+        }
+
+       @supports(object-fit: contain){
+            #hemorragia{
+                position: absolute;
+                top: 15%;
+                left: 59%;
+                transform: translate(-50%, -50%);
+                height: 20%;
+                width: 20%;
+                object-fit: contain;
+            }
+        } 
+
+/* Evaluación */
+.divEvaluacion{
+    display: flex;
+    flex-direction: column;
+    grid-area: eva;
+}
+
+.divValoracion{
+    display: flex;
+    flex-direction: column;
+    border: 0.15vw solid grey;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0.3vw 0.3vw 0 0.3vw;
+    flex: 4.1;
+    margin-bottom: 0.5rem;
+     
+}
+#btnRespira, #btnAbro, #btnPulso, #btnOrdenes{
+    margin-bottom: 0.5rem;
+    margin-right: 0.2rem;
+    padding: 0%;
+    font-size: 2.5vh;
+    flex: 1;
+}
+#btnRespira, #btnAbro{
+    background-color: rgb(44, 123, 226);
+}
+#btnRespira:hover, #btnAbro:hover{
+    background-color: rgb(167, 168, 245);
+}
+#btnPulso{
+    background-color: red;
+}
+#btnPulso:hover{
+    background-color: rgb(245, 120, 120);
+}
+#btnOrdenes{
+    background-color: rgb(243, 161, 10);
+}
+#btnOrdenes:hover{
+    background-color: rgb(185, 162, 111);
+}
+
+
+.divSalvadoras{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    border: 0.15vw solid grey;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0.3vw;
+    margin-top: auto;
+    flex: 1.9;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+.btnPosiLat{
+    grid-column: span 2;
+}
+
+.btnTorniquete, .btnCompresion, .btnPosiLat{
+    background-color: rgb(74, 83, 88);
+    font-size: 2.5vh;
+    padding: 0%;
+    height:auto
+}
+
+.btnTorniquete:hover, .btnCompresion:hover, .btnPosiLat:hover{
+    background-color: rgb(141, 146, 148);
+}
+
+
+/*Animación*/
+.divAnimacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    border: 0.15vw solid grey;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0.3vw;
+    margin-bottom: 0.2rem;
+    flex: 5.9;
+    position: relative;
+}
+
+    .vid{
+        width: 192px;
+        height: 168px;
+    }
+
+    @supports(object-fit: cover){
+        .vid{
+          height: auto;
+          width: 95%;
+          object-fit:contain;
+          object-position: center center;
+        }
+    }
+
+    .textoEncima{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color:red;
+        font-family: 'Quicksand';
+        font-weight: 900;
+        font-size: 2.2vmax;
+    }
+    
+/* Triaje */
+    .divTriaje{
+        display: flex;
+        flex: 2.4;
+        align-content: space-between;
+        justify-content: center;
+    }
+ 
+        
+
+    .btnVerde, .btnAmarillo, .btnNegro, .btnRojo{
+        flex: 1; 
+        border: 0.15vw solid grey;
+        border-radius: 10px 10px 10px 10px;
+        margin-bottom: 1rem;
+    }
+
+
+
+    .btnVerde{background-color: green;}
+    .btnVerde:hover{background-color: rgb(27, 172, 27);
+        border: 0.15vw solid white;}
+    .btnAmarillo{background-color: yellow;}
+    .btnAmarillo:hover{background-color: rgb(245, 245, 167);
+        border: 0.15vw solid white;}
+    .btnNegro{background-color: black;}
+    .btnNegro:hover{background-color: rgb(46, 45, 45);
+        border: 0.15vw solid white;}
+    .btnRojo{background-color: red;}
+    .btnRojo:hover{background-color: rgb(248, 106, 106);
+        border: 0.15vw solid white;}
+
+
+
+/* Contadores */
+        .divContadores{
+            display: flex;
+            flex-direction: rows;
+            grid-area: con;
+            margin-left: 1rem;
+        }
+
+        .victimas{
+            display: flex;
+            flex-direction: column;
+            color: white;
+            /* background: rgb(107, 174, 236); */
+            flex: 1;
+            margin: 0.3rem auto 1rem auto;
+            justify-content: center;
+            align-items: center;
+            border: 0.15vw solid grey;
+            border-radius: 10px 10px 10px 10px;
+          }
+
+          #a{
+              grid-area: a;
+          }
+
+          #correcto{
+              grid-area: b;
+          }
+          
+          .aciertos{
+            display: flex;
+            flex-direction: column;
+            color: white;
+            flex: 1;
+            margin: 0.3rem auto 1rem auto;
+            justify-content: center;
+            align-items: center;
+            border: 0.15vw solid grey;
+            border-radius: 10px 10px 10px 10px;
+            position: relative;
+          }
+
+/*Imagen CheckCont*/
+        .checkCont{
+            width: 10px;
+            height: 10px;
+        }
+        @supports(object-fit: contain){
+            .checkCont{
+                position: absolute;
+                top: 28%;
+                left: 85%;
+                transform: translate(-50%, -50%);
+                height: 50%;
+                width: 50%;
+                object-fit: contain;
+            }
+        }
+          
+          .errores{
+            display: flex;
+            flex-direction: column;
+            color: white;
+            /* background: rgb(251, 108, 108); */
+            flex: 1;
+            margin: 0.3rem auto 1rem auto;
+            justify-content: center;
+            align-items: center;
+            border: 0.15vw solid grey;
+            border-radius: 10px 10px 10px 10px;
+            position: relative;
+          }
+
+/*Imagen ErrorCont*/
+        .errorCont{
+            width: 10px;
+            height: 10px;
+        }
+        @supports(object-fit: contain){
+            .errorCont{
+                position: absolute;
+                top: 30%;
+                left: 85%;
+                transform: translate(-50%, -50%);
+                height: 50%;
+                width: 50%;
+                object-fit: contain;
+            }
+        }
+    
+          h4, h2{
+            font-size: 1.5vw;
+          }
+
+/*Alertas*/
+          .textAlert{
+            font-size: 1.5vw;
+            text-align: start;
+          }
+          .textAlertCenter{
+            font-size: 1.5vw;
+            text-align: center;
+          }
+
+          .textAlertCenterBold{
+            font-size: 1.5vw;
+            text-align: center;
+            font-weight: bold;
+
+          }
+
+          .grande{
+            font-size:2vw;
+            font-weight: bold;
+          }
+
+          .grande2{
+            font-size:1,5vw;
+            font-weight: bold;
+            color: green;
+          }
+
+/*Reloj*/
+        #reloj { 
+            flex: 1;
+            margin: 0.3rem auto auto auto;
+        } 
+
+      #cont{
+        font-size: 5vw;
+        font-family: digital;
+        color: red;
+        text-align:start;
+        margin: 0 auto auto 2vw;
+
+      }
+        /* Forzar Cambio de color de letra de una clase Bootstrap*/
+        .letraBlanca {
+            color: white;
+        }
+
+
+
+@media screen and (max-width: 360px) and (orientation: portrait){
+    
+    .wrapper {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 5vh 20vh 65vh 10vh;
+        height: 100vh;
+        width: 100%;
+        max-width: 4060px;
+        margin: 0 auto;
+        gap: 0.2rem;
+        overflow: hidden;
+        grid-template-areas:
+            "nav"
+            "img"
+            "eva"
+            "con";
+    }
+}
+
+
+
+
+

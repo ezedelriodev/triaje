@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <script type="text/javascript">
+        var host = "www.triajestartduizex.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))window.location.protocol = "https";
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- PARA CUALQUIER NAVEGADOR -->
+    <link rel="icon" href="./assets/favicon32.png" sizes="32x32" type="image/png">
+ 
+    <!-- PARA LOS MODELOS MAS RECIENTES DE IPAD Y IPHONE -->
+    <link rel="apple-touch-icon-precomposed" href="./assets/favicon120.png" type="image/png" sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="./assets/favicon152.png" type="image/png" sizes="152x152">
+    
+    <title>Triaje Start Disaster Role</title>
+<link href="main.css" rel="stylesheet"></head>
+<body>
+
+<!-- Contenedor general -->
+    <main class="wrapper">
+
+<!-- Cabecera         -->
+        <nav class="nav">
+            <p class="logoProvisional">Triaje Start</p>
+            <button type="button" class="pausar fl2 my-2 btn" disabled = "disabled">Pausar</button>
+            <button type="button" class="iniciar m-2 btn">Iniciar Triaje</button>
+            <button type="button" class="salir  my-2 btn mr-3 btn">Finalizar</button>
+        </nav>
+
+<!-- Imagen Víctima -->
+        <div class="divImgVic">
+            <img id="imgVictima" src="823e923a55877a9379be9cd9aca1690f.jpg">
+
+            <!--Quitar style display:none-->
+            <img class="check" id="check" src="8b3a2a3e6ea2719ed111ded7067f2ecd.png" style="display:none"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+            <img class="check" id="error" src="1c57788464c75dd93127f25c996e237d.png" style="display:none"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+            <img id="hemorragia" class="torni" src="3e8b1b2d959a8f06ae1806fecb2952c0.png" style="display:none"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+            <img id="hemorragia" class="presi" src="fef60db953514597d81a5f538c9aa358.png" style="display:none"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+
+        </div>
+
+<!-- Evaluación         -->
+        <div class="divEvaluacion mr-3" id="botonera">
+            <div class="divValoracion">
+                <button type="button" id='btnRespira'class=" fl2 letraBlanca btn " disabled = "disabled">¿Respira?</button>
+                <button type="button" id='btnAbro'   class=" fl2 letraBlanca btn " disabled = "disabled">Abrir Vía Aerea</button>
+                <button type="button" id='btnPulso'  class=" fl2 letraBlanca btn " disabled = "disabled">¿Pulso Radial / Relleno Capilar &lt 2"?</button>
+                <button type="button" id='btnOrdenes'class=" fl2 letraBlanca btn " disabled = "disabled">¿Obedece Órdenes?</button>               
+            </div>
+            <div class="divSalvadoras">
+                <button type="button" id='btnPosLate'class=" fl2 letraBlanca btnPosiLat     btn " disabled = "disabled">Posición Lateral de Seguridad</button>
+                <button type="button" id='torniquete'class=" fl2 letraBlanca btnTorniquete  btn " disabled = "disabled">Torniquete</button>
+                <button type="button" id='compresion'class=" fl2 letraBlanca btnCompresion  btn " disabled = "disabled">Compresión Directa</button>
+            </div>
+            <div class="divAnimacion">
+                <img class="logoTexto" src="391700c0d9d76f9bb51cd2cfd543142f.jpg" alt="Disaster Rol Logo" style="display:block">
+                <video class="vid rounded" id="respiraVid" src="657255c5bfb661a036373cc9ad5dd5c0.mp4" style="display:none"></video>
+                <video class="vid" id="respiraRapVid" src="b02c419a5ab759b746909cb6f903a927.mp4" style="display:none"></video>
+
+                <h4 class="textoEncima" id="noRespira" style="display:none">¡¡No Respira!!</h4> 
+
+                <video class="vid" id="pulsoVid" src="1bba27fda2686443c054351a7e3ad725.mp4" style="display:none"></video>
+                <img src="ff1e055faf9a1423f1ac527c20fb010d.png" id="noPulso" class="vid" style="display:none">
+
+                <video class="vid" id="ordenVid" src="b8ca13c5ebedd6892790c071f3de7608.mp4" style="display:none"></video>
+                <video class="vid" id="noOrdenVid" src="2a77f8f366b1818d420e4ca59e4d2ab2.mp4"style="display:none"></video>
+            </div>
+            <div class="divTriaje">
+                <button type="button" id='btnRojo'    class="fl2 btnRojo     btn mt-1 mr-2" disabled = "disabled"></button>
+                <button type="button" id='btnAmarillo'class="fl2 btnAmarillo btn mt-1 mr-2" disabled = "disabled"></button>
+                <button type="button" id='btnVerde'class="fl2 btnVerde btn mt-1 mr-2" disabled = "disabled"></button>
+                <button type="button" id='btnNegro'class="fl2 btnNegro btn mt-1 " disabled = "disabled"></button>
+            </div>
+        </div>
+
+<!-- Contadores -->
+        <div class="divContadores">
+            <div class="victimas  mr-2" > 
+                <h4>Víctimas Restantes</h4>
+                <h2 id="restantes">0</h2>
+            </div>
+            <div class="aciertos  mr-2" >
+                <h4>Aciertos</h4>
+                <h2 id="correcto" >0 = 0%</h2>
+                <img class="checkCont" id="checkCont" src="8b3a2a3e6ea2719ed111ded7067f2ecd.png" style="display:block"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+            </div>
+            <div class="errores  mr-2" >
+                <h4>Errores</h4>
+                <h2 id="errorHTML" >0 = 0%</h2>
+                <img class="errorCont" id="errorCont" src="1c57788464c75dd93127f25c996e237d.png" style="display:block"> <!--Posible style="visibility: hidden;" para trabajat con él-->
+
+            </div>
+            <div id="reloj">
+                <div id='cont'>00:00</div>   
+            </div>
+        </div>
+    </main>
+
+<!-- Audios -->
+     <audio id="correctoAud" src='46332a65894d8a890d1797b16a733c51.mp3'></audio>
+     <audio id="errorAud" src='2443765df76841f702139aafa2c97579.mp3'></audio>
+     <audio id="clickAud" src='a8feb6c3ac9a64a3334b8897b7343aeb.mp3'></audio>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="main.js"></script></body>
+</html>
