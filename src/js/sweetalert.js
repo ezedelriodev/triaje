@@ -90,7 +90,7 @@ export const finalMas80 = '<p class= "grande">Tus aciertos han superado el 80% <
                     '<p class="textAlertCenterBold"> ¿Quieres seguir entrenando?</p>';
 
 const menPass = '<p class="grande" >Introduce código habilitado para usar la aplicación</p> <br>'+
-                '<p class="textAlert">Si no dispones de un código habilitado puedes contactar con <a href="mailto:info@triajestartduizex.com">info@triajestartduizex.com</a> para poder hacer uso de la aplicación.</p>';
+                '<p class="textAlert">Si no dispones de un código habilitado puedes contactar con <a href="mailto:eze.delrio@gmail.com">eze.delrio@gmail.com</a> para poder hacer uso de la aplicación.</p>';
 
 const bienVenido = '<p class="grande" >¡¡Bienvenid@!!</p> <br>'+
                 '<p class="textAlert">Pulsa el botón <span class="grande2"> Iniciar Triaje </span>  cuando quieras comenzar el ejercicio.</p>';
